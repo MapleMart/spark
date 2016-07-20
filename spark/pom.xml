@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.hyf</groupId>
+	<artifactId>spark</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>spark</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- 私有仓库 -->
+	<repositories>
+		<repository>
+			<id>public</id><!--这个ID需要与你新建的组group ID一致 -->
+			<name>Public Repository</name>
+			<url>http://192.168.87.89:8081/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+	<!-- 自动打包 -->
+	<distributionManagement>
+		<repository>
+			<id>nexus-release</id>
+			<url>http://192.168.87.89:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://192.168.87.89:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
