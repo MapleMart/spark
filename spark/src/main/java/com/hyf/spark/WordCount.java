@@ -68,6 +68,7 @@ public class WordCount
 			}
 		});
 		counts.saveAsTextFile("hdfs://192.168.1.20:9000/test1/b3.txt");// hadoop上的新建的hdfs的文件
+		
 	}
 
 }

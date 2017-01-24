@@ -15,18 +15,22 @@
 		<repository>
 			<id>public</id><!--这个ID需要与你新建的组group ID一致 -->
 			<name>Public Repository</name>
-			<url>http://192.168.87.89:8081/nexus/content/groups/public/</url>
+			<url>http://127.0.0.1:8081/repository/maven-public/</url>
+		</repository>
+		<repository>
+			<id>cloudera</id>
+			<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
 		</repository>
 	</repositories>
 	<!-- 自动打包 -->
 	<distributionManagement>
 		<repository>
 			<id>nexus-release</id>
-			<url>http://192.168.87.89:8081/nexus/content/repositories/releases/</url>
+			<url>http://127.0.0.1:8081/repository/maven-releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>nexus-snapshots</id>
-			<url>http://192.168.87.89:8081/nexus/content/repositories/snapshots/</url>
+			<url>http://127.0.0.1:8081/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -41,6 +45,21 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-assembly_2.10 -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-assembly_2.10</artifactId>
+			<version>1.6.0-cdh5.9.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-common</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+
+
+
 	</dependencies>
 
 </project>
